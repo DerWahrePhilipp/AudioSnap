@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>AudioSnap - Control</title>
+<link rel="stylesheet" href="/control.css" />
+</head>
+<body>
+
+<header id="top-bar">
+  <div class="field-group">
+    <label class="small-label">CSV</label>
+    <input type="file" id="csv-file" accept=".csv" />
+    <span id="csv-status" class="status-text">No CSV loaded</span>
+  </div>
+
+  <div class="field-group">
+    <label class="small-label" for="recorder-input">Recorder label</label>
+    <input type="text" id="recorder-input" placeholder="e.g. A" />
+    <button id="set-recorder-btn">Set</button>
+    <span id="recorder-status" class="status-text"></span>
+  </div>
+
+  <div class="field-group">
+    <button id="enable-mic-btn">Enable Microphone</button>
+    <div id="level-meter"><div id="level-bar"></div></div>
+  </div>
+</header>
+
+<main>
+  <aside id="progress-panel">
+    <div class="panel-title">
+      Characters <span id="progress-count"></span>
+    </div>
+    <div id="progress-list"></div>
+  </aside>
+
+  <section id="center-panel">
+    <div id="preview-wrap">
+      <iframe id="preview-frame" src="/display.html" title="Recordee screen preview"></iframe>
+    </div>
+
+    <div id="selected-panel">
+      <div id="selected-info">Click a character in the list to select it.</div>
+      <div class="control-row">
+        <button id="start-from-selected-btn" class="primary">Start from here</button>
+        <button id="retake-btn">Retake recording</button>
+        <button id="play-selected-btn">Play recording</button>
+      </div>
+    </div>
+
+    <div id="pre-session-controls" class="control-row">
+      <button id="jump-first-unrecorded-btn">Jump to first unrecorded</button>
+    </div>
+
+    <div id="session-controls" class="control-row" hidden>
+      <button id="break-btn">Break</button>
+      <button id="continue-btn" class="primary" hidden>Continue</button>
+      <button id="previous-btn" title="Hotkey: p">Previous</button>
+      <button id="next-btn" class="primary" title="Hotkey: n">Next (n)</button>
+      <button id="redo-btn">Redo character</button>
+      <button id="jump-to-selected-btn">Jump to selected</button>
+      <button id="stop-btn" class="danger">Stop</button>
+    </div>
+
+    <div class="control-row">
+      <button id="playback-btn">Playback last take</button>
+      <audio id="playback-audio" controls></audio>
+    </div>
+
+    <div id="session-status"></div>
+    <div id="error-banner" hidden></div>
+  </section>
+</main>
+
+<script src="/control.js"></script>
+</body>
+</html>

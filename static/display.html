@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>AudioSnap - Display</title>
+<link rel="stylesheet" href="/display.css" />
+</head>
+<body>
+  <div id="stage">
+    <div id="idle-view" class="view">
+      <div class="status-word">Waiting to start&hellip;</div>
+    </div>
+
+    <div id="recording-view" class="view" hidden>
+      <div class="character" id="character-text"></div>
+      <div class="pronunciation" id="pronunciation-text"></div>
+    </div>
+
+    <div id="paused-view" class="view" hidden>
+      <div class="status-word paused">Paused</div>
+    </div>
+
+    <div id="stopped-view" class="view" hidden>
+      <div class="status-word">Session finished</div>
+    </div>
+  </div>
+
+  <script src="/display.js"></script>
+</body>
+</html>
