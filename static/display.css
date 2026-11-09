@@ -33,16 +33,28 @@ html, body {
 }
 
 .character {
+  /* font-size is set dynamically by display.js (fitText); this is only the
+     fallback/initial value if the script hasn't run yet. */
   font-size: min(32vw, 42vh);
-  line-height: 1;
+  line-height: 1.1;
   font-weight: 600;
+  width: 100%;
+  max-width: 100%;
+  overflow-wrap: break-word;
+  word-break: break-word;
 }
 
 .pronunciation {
   margin-top: 4vh;
+  /* font-size is set dynamically by display.js (fitText). */
   font-size: min(8vw, 9vh);
+  line-height: 1.15;
   color: #b9b9c2;
   letter-spacing: 0.02em;
+  width: 100%;
+  max-width: 100%;
+  overflow-wrap: break-word;
+  word-break: break-word;
 }
 
 .status-word {
